@@ -24,17 +24,12 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavType
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
-import androidx.navigation.compose.rememberNavController
-import androidx.navigation.navArgument
 import com.example.catalogotheme.model.Routes
 import com.example.catalogotheme.ui.CheckInfo
 import com.example.catalogotheme.ui.theme.CatalogoThemeTheme
 
 class MainActivity : ComponentActivity() {
-    @ExperimentalComposeApi
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -46,39 +41,10 @@ class MainActivity : ComponentActivity() {
                 }
 
                 Surface(
-                    modifier = Modifier.fillMaxSize(),
+
                     color = MaterialTheme.colors.background
                 ) {
-
-                    val navigationController = rememberNavController()
-                    NavHost(
-                        navController = navigationController,
-                        startDestination = Routes.Pantalla1.route
-                    ) {
-
-                        composable(Routes.Pantalla1.route) { Screen1(navigationController) }
-                        composable(Routes.Pantalla2.route) { Screen2(navigationController) }
-                        composable(Routes.Pantalla3.route) { Screen3(navigationController) }
-                        composable(
-                            Routes.Pantalla4.route,
-                            arguments = listOf(navArgument("age") { type = NavType.IntType })
-                        ) { backStackEntry ->
-                            Screen4(
-                                navigationController,
-                                backStackEntry.arguments!!.getInt("age")
-                            )
-                        }
-                        composable(
-                            Routes.Pantalla5.route,
-                            arguments = listOf(navArgument("name", { defaultValue = "Pepe" }))
-                        ) { backStackEntry ->
-                            Screen5(
-                                navigationController,
-                                backStackEntry.arguments?.getString("name")
-                            )
-                        }
-                    }
-
+                    CrossfadeExampleAnimation()
                 }
             }
         }
