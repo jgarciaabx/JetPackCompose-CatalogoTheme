@@ -10,8 +10,8 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import com.example.catalogotheme.login.LoginScreen
-import com.example.catalogotheme.login.LoginViewModel
+import com.example.catalogotheme.login.ui.LoginScreen
+import com.example.catalogotheme.login.ui.LoginViewModel
 import com.example.catalogotheme.ui.theme.CatalogoThemeTheme
 
 class MainActivity : ComponentActivity() {
