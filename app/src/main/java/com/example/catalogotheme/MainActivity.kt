@@ -44,7 +44,7 @@ class MainActivity : ComponentActivity() {
 
                     color = MaterialTheme.colors.background
                 ) {
-                    CrossfadeExampleAnimation()
+                    ConstraintExample1()
                 }
             }
         }
